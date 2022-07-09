@@ -23,10 +23,12 @@ public class MemberService {
      */
     public Long join(Member member) {
 
-        validateDuplicateMember(member); // 회원 중복 검증
 
-        memberRepository.save(member);
-        return member.getId();
+            validateDuplicateMember(member); // 회원 중복 검증
+
+            memberRepository.save(member);
+            return member.getId();
+
     }
 
     //멤버 서비스가 멤버 레포지토리의 메서드를 사용하기 위해 멤버 레포지토리를  멤버서비스에 연결했다.
@@ -54,5 +56,6 @@ public class MemberService {
     public Optional<Member> findOne(Long member) {
         return memberRepository.findById(member);
     }
-    
+
+
 }
